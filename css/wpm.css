@@ -11,11 +11,13 @@ body {
 	color: #8F8F8F;
 	float: center;
 	text-align: center;
+	margin: 10px;
 }
 
 #typefield {
 	float: center;
 	text-align: left;
+	margin: 10px;
 }
 
 #quote {
@@ -24,4 +26,9 @@ body {
 	width: 700px;
 	float: center;
 	text-align: left;
+	margin: 50px 0 20px 0;
+}
+
+#timer {
+	margin: 5px;
 }
