@@ -10,6 +10,7 @@ $(document).ready(function() {
 
 	$('#quote').append('<p>' + paragraph + '</p>');
   $('#timer').html('<p>60 seconds</p>');
+  $('#typefield').html('');
 
   var detectStart = function() {
   	var hasStarted = false;
@@ -25,13 +26,17 @@ $(document).ready(function() {
   }
 
  	var myCounter = new CountdownTimer({
-		seconds: 59,
+		seconds: 10,
 		onTimerUpdate: function(sec) {
 			$('#timer').html('');
 			$('#timer').append('<p>' + sec + ' seconds</p>');
 		},
 		onCounterEnd: function() {
-			console.log('counter ended');
+			var inputObject = {};
+			var input = $('#typefield').val();
+			input = input.split(" ");
+			
+			console.log(input);
 		}
 	});
 
