@@ -6,3 +6,22 @@ body {
 	text-align: center;
 }
 
+#instructions {
+	font-size: .7em;
+	color: #8F8F8F;
+	float: center;
+	text-align: center;
+}
+
+#typefield {
+	float: center;
+	text-align: left;
+}
+
+#quote {
+	display: inline-block;
+	font-family: Helvetica, sans-serif;
+	width: 700px;
+	float: center;
+	text-align: left;
+}
