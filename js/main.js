@@ -9,5 +9,31 @@ $(document).ready(function() {
 	var paragraph = paragraphs[Math.floor(Math.random() * paragraphs.length)];
 
 	$('#quote').append('<p>' + paragraph + '</p>');
+  $('#timer').html('<p>60 seconds</p>');
 
+  var detectStart = function() {
+  	var hasStarted = false;
+
+  	if (!hasStarted) {
+			setInterval(function() {
+				if ($('#typefield').val() !== '' && !hasStarted) {
+					hasStarted = true;
+	        myCounter.start();
+				}
+			}, 100);
+  	}
+  }
+
+ 	var myCounter = new CountdownTimer({
+		seconds: 59,
+		onTimerUpdate: function(sec) {
+			$('#timer').html('');
+			$('#timer').append('<p>' + sec + ' seconds</p>');
+		},
+		onCounterEnd: function() {
+			console.log('counter ended');
+		}
+	});
+
+	detectStart();
 });
