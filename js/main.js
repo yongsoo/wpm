@@ -26,7 +26,7 @@ $(document).ready(function() {
   }
 
  	var myCounter = new CountdownTimer({
-		seconds: 10,
+		seconds: 59,
 		onTimerUpdate: function(sec) {
 			$('#timer').html('');
 			$('#timer').append('<p>' + sec + ' seconds</p>');
@@ -35,8 +35,10 @@ $(document).ready(function() {
 			var inputObject = {};
 			var input = $('#typefield').val();
 			input = input.split(" ");
+			input = input.slice(0, input.length-1);
 			
-			console.log(input);
+			var wpm = input.length;
+			console.log(wpm);
 		}
 	});
 
