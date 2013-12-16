@@ -35,3 +35,15 @@ var wordsToObj = function(array) {
 
   return resultObj;
 }
+
+var computeMistypedWords = function(userInputObj, actParaObj) {
+	var mistypedWords = [];
+
+  for (var key in userInputObj) {
+  	if (actParaObj[key] === undefined && key !== "") {
+  		mistypedWords.push(key);
+  	}
+  }
+
+  return mistypedWords;
+}

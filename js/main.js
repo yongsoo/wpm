@@ -7,7 +7,7 @@ $(document).ready(function() {
   $('#typefield').html('');
 
  	var myCounter = new CountdownTimer({
-		seconds: 59,
+		seconds: 5,
 		onTimerUpdate: function(sec) {
 			$('#timer').html('');
 			$('#timer').append('<p>' + sec + ' seconds</p>');
@@ -17,13 +17,15 @@ $(document).ready(function() {
 			input = input.split(" ");
 			input = input.slice(0, input.length-1);
 
+			var wpm = input.length; // Calculates WPM for user
+
 			paragraph = paragraph.split(" ");
 			paragraph = paragraph.slice(0, input.length);
 
 			input = wordsToObj(input); // Parses user input into object
 			paragraph = wordsToObj(paragraph); // Parses actual paragraph into object
 
-			var wpm = input.length; // Calculates WPM for user
+			var mistypedWordsArr = computeMistypedWords(input, paragraph);
 
 		}
 	});
