@@ -6,6 +6,26 @@ body {
 	text-align: center;
 }
 
+button {
+	background-color: #FFFFFF;
+	cursor: pointer;
+	width: 7em;
+	height: 2.2em;
+	font-size: 1em;
+	margin: .4em;
+	border-color: #FFFFFF;
+	border-radius: 10%;
+	-moz-border-radius: 10%;
+}
+
+button:hover {
+	border: 1px solid #919191;
+}
+
+button:active {
+	background-color: #949494;
+}
+
 #instructions {
 	font-size: .7em;
 	color: #8F8F8F;

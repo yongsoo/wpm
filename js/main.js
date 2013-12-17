@@ -55,8 +55,12 @@ $(document).ready(function() {
 				$('#stats').append('<li><br>Please play this game responsibly!</li>');
 			}
 
-			$('#stats').append('<li><br><a href="index.html">Play Again</a></li><br>');
+			$('#stats').append('<li><br><button class="letter" id="playAgainButton">Try Again</button></li><br>');
 			$('#stats').fadeIn();
+
+			$('#playAgainButton').on('click', function() {
+	      document.location.href = 'index.html';
+			});
 		}
 	});
   
