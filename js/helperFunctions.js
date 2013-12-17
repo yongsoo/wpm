@@ -47,3 +47,7 @@ var computeMistypedWords = function(userInputObj, actParaObj) {
 
   return mistypedWords;
 }
+
+var computeScore = function(accuracyPercentage, wpm) {
+	return wpm * 100 * (accuracyPercentage/100);
+}
