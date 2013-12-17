@@ -14,11 +14,10 @@ button {
 	font-size: 1em;
 	margin: .4em;
 	border-color: #FFFFFF;
-	border-radius: 10%;
-	-moz-border-radius: 10%;
 }
 
 button:hover {
+	opacity: 0.9;
 	border: 1px solid #919191;
 }
 
@@ -62,6 +61,7 @@ button:active {
 	background-color: #C5EBDD;
 	width: 500px;
 	box-shadow: 3px 3px 3px #888888;
+	opacity: 0.9;
 }
 
 #stats li {
