@@ -35,15 +35,16 @@ $(document).ready(function() {
 				paragraph = wordsToObj(paragraph); // Parses actual paragraph into object
 
 				var mistypedWordsArr = computeMistypedWords(input, paragraph);
-				var accuracyPercentage = (1 - (mistypedWordsArr.length / Object.keys(paragraph).length)) * 100;
+				var accuracyPercentage = Math.round((1 - (mistypedWordsArr.length / Object.keys(paragraph).length)) * 100);
+				var score = Math.round(computeScore(accuracyPercentage, wpm));
 
 				if (mistypedWordsArr.length === 0) {
 					mistypedWordsArr = ["None - nice work!"];
 				}
 
 				$('#stats').append('<li><br>Words Per Minute: ' + wpm + '</li><br>');
-				$('#stats').append('<li>Accuracy: ' + Math.round(accuracyPercentage) + '%</li><br>');
-				$('#stats').append('<li>Score: ' + Math.round(computeScore(accuracyPercentage, wpm)) + '</li><br>');
+				$('#stats').append('<li>Accuracy: ' + accuracyPercentage + '%</li><br>');
+				$('#stats').append('<li>Score: ' + score + '</li><br>');
 				$('#stats').append('<li>Your Mistyped Words:</li></br>');
 
 				mistypedWordsArr.forEach(function(word) {
