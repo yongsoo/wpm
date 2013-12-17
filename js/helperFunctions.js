@@ -9,7 +9,7 @@ var randParagraph = function() {
 	return paragraphs[Math.floor(Math.random() * paragraphs.length)];
 }
 
-var detectStart = function(counter) {
+var startTimer = function(counter) {
 	var hasStarted = false;
 
 	if (!hasStarted) {
