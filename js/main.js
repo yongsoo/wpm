@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 			var wpm = input.length; // Calculates WPM for user
 
-			if ((keyPresses / wpm) > 4 && (keyPresses / wpm) < 7) {
+			if ((keyPresses / wpm) > 4 && (keyPresses / wpm) < 9) {
 	      paragraph = paragraph.split(" ");
 				paragraph = paragraph.slice(0, input.length);
 
