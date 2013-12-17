@@ -7,7 +7,7 @@ $(document).ready(function() {
   $('#typefield').html('');
 
  	var myCounter = new CountdownTimer({
-		seconds: 5,
+		seconds: 9,
 		onTimerUpdate: function(sec) {
 			$('#timer').html('');
 			$('#timer').append('<p>' + sec + ' seconds</p>');
@@ -26,6 +26,23 @@ $(document).ready(function() {
 			paragraph = wordsToObj(paragraph); // Parses actual paragraph into object
 
 			var mistypedWordsArr = computeMistypedWords(input, paragraph);
+			var accuracyPercentage = Math.round((1 - (mistypedWordsArr.length / Object.keys(paragraph).length)) * 100);
+
+			if (mistypedWordsArr.length === 0) {
+				mistypedWordsArr = ["None - nice work!"];
+			}
+
+			$('#stats').append('<li><br>Words Per Minute: ' + wpm + '</li><br>');
+			$('#stats').append('<li>Accuracy: ' + accuracyPercentage + '%</li><br>');
+			$('#stats').append('<li>Your Mistyped Words:</li></br>');
+
+			mistypedWordsArr.forEach(function(word) {
+				$('#stats').append('<li>' + word + '</li>');
+			});
+
+			$('#stats').append('<li><br><a href="index.html">Play Again</a></li><br>');
+
+			$('#stats').fadeIn();
 
 		}
 	});
