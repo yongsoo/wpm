@@ -42,7 +42,7 @@ $(document).ready(function() {
 					mistypedWordsArr = ["None - nice work!"];
 				}
 
-				$('#stats').append('<li><br>Words Per Minute: ' + wpm*8 + '</li><br>');
+				$('#stats').append('<li><br>Words Per Minute: ' + wpm + '</li><br>');
 				$('#stats').append('<li>Accuracy: ' + accuracyPercentage + '%</li><br>');
 				$('#stats').append('<li>Score: ' + score + '</li><br>');
 				$('#stats').append('<li>Your Mistyped Words:</li></br>');
