@@ -12,7 +12,7 @@ $(document).ready(function() {
   $('#typefield').html('');
 
  	var myCounter = new CountdownTimer({
-		seconds: 9,
+		seconds: 5,
 		onTimerUpdate: function(sec) {
 			$('#timer').html('');
 			$('#timer').append('<p>' + sec + ' seconds</p>');
@@ -50,17 +50,40 @@ $(document).ready(function() {
 				mistypedWordsArr.forEach(function(word) {
 					$('#stats').append('<li>' + word + '</li>');
 				});
+
+				var name = $('#user').val();
+				console.log(name);
+				console.log(score);
+
+	  		$.ajax({
+			    url: 'http://127.0.0.1:8080',
+			    type: 'POST',
+			    contentType: 'application/json',
+			    data: JSON.stringify({
+			      name: name,
+			      score: score
+			    }),
+			    success: function() {
+			      console.log('it sent');
+			    },
+			    error: function() {
+			      console.log('failed to send message');
+			    }
+			  });
+
+				$('#stats').append('<li><br><br><input id="user" type="text" placeholder="Your name"></input></li>');
+				$('#stats').append('<li><br><button class="playButton" id="postScorePlayAgain">Post Score & Play Again</button></li><br>');
 			}
 
 			else {
 				$('#stats').append('<li><br>Please play this game responsibly!</li>');
-			}
+				$('#stats').append('<li><br><button class="playButton" id="playAgainButton">Play Again</button></li><br>');
 
-			$('#stats').append('<li><br><button class="letter" id="playAgainButton">Try Again</button></li><br>');
+			}
 			$('#stats').fadeIn();
 
-			$('#playAgainButton').on('click', function() {
-	      document.location.href = 'index.html';
+			$('.playButton').on('click', function() {
+	      document.location.href = 'http://127.0.0.1:8080';
 			});
 		}
 	});

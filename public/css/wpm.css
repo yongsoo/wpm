@@ -9,7 +9,7 @@ body {
 button {
 	background-color: #FFFFFF;
 	cursor: pointer;
-	width: 7em;
+	width: 13em;
 	height: 2.2em;
 	font-size: 1em;
 	margin: .4em;
@@ -37,6 +37,7 @@ button:active {
 	float: center;
 	text-align: left;
 	margin: 10px;
+	resize: none;
 }
 
 #quote {
@@ -50,6 +51,10 @@ button:active {
 
 #timer {
 	margin: 5px;
+}
+
+#user {
+	width: 100px;
 }
 
 #stats {
