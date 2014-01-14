@@ -25,6 +25,11 @@ button:active {
 	background-color: #949494;
 }
 
+h1 {
+	font-size: 3.5em;
+	margin: .7em 0 0 0;
+}
+
 #instructions {
 	font-size: .7em;
 	color: #8F8F8F;

@@ -51,14 +51,13 @@ $(document).ready(function() {
 					$('#stats').append('<li>' + word + '</li>');
 				});
 
-				$('#stats').append('<li><br><br><input id="user" type="text" placeholder="Your name"></input></li>');
-				$('#stats').append('<li><br><button class="playButton" id="postScorePlayAgain">Post Score & Play Again</button></li><br>');
+				$('#stats').append('<li><br><button class="playButton" id="playAgain">Play Again</button></li><br>');
 
 			}
 
 			else {
 				$('#stats').append('<li><br>Please play this game responsibly!</li>');
-				$('#stats').append('<li><br><button class="playButton" id="playAgainButton">Play Again</button></li><br>');
+				$('#stats').append('<li><br><button class="playButton" id="playAgain">Play Again</button></li><br>');
 
 			}
 			$('#stats').fadeIn();
