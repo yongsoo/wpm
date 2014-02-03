@@ -64,8 +64,6 @@ $(document).ready(function() {
 
 			$('.playButton').on('click', function() {
 				var name = $('#user').val();
-				console.log(name);
-				console.log(score);
 
 	  		$.ajax({
 			    url: 'http://127.0.0.1:8080',
